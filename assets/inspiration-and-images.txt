@@ -1,0 +1,32 @@
+Images:
+https://www.pexels.com/@max-artbovich/collections/
+
+Inspiration:
+
+http://demo.themepiko.com/construct/
+
+https://n.foxdsgn.com/industryo/
+https://n.foxdsgn.com/industryo/landingpage/
+https://n.foxdsgn.com/industryo/home-construction/
+
+Servicii
+https://n.foxdsgn.com/industryo/services-version-1/
+https://n.foxdsgn.com/industryo/services-version-2/
+https://n.foxdsgn.com/industryo/services-version-3/
+Servcii single page
+https://n.foxdsgn.com/industryo/project-planning/
+https://n.foxdsgn.com/industryo/qualified-specialists/
+
+
+De folosit:
+https://swiperjs.com/demos#centered
+https://splidejs.com/
+https://revealjs.com/
+
+https://kenwheeler.github.io/slick/
+https://glidejs.com/
+
+https://alvarotrigo.com/fullPage/
+
+
+
