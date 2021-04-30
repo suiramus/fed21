@@ -71,7 +71,6 @@ img {border-style: none;}
 
 body {
 	font-family: var(--sans-serif);
-	;
 	color: var(--text-color);
 	background: var(--background-color);
 	display: flex;
@@ -82,8 +81,12 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
 	margin: .5rem 0;
+}
+
+#main h1,
+#main h2,
+#main h3 {
 	color: var(--secondary-color);
-	;
 }
 
 h1, .h1 {font-size: 2.8rem; line-height: 1.3;}
@@ -200,6 +203,7 @@ header#header {
 }
 
 	.hero-title {
+		color: #FFF;
 		font-size: 4rem;
 		line-height: 1.1;
 		margin-bottom: 40px;
@@ -210,8 +214,8 @@ header#header {
 		font-size: 1.5rem;
 		line-height: 1.3;
 		text-transform: uppercase;
-		letter-spacing: 1px;
-		font-weight: 500;
+		/*letter-spacing: 1px;*/
+		font-weight: 700;
 		text-shadow: 2px 5px 10px rgba(0,0,0,.7);
 	}
 
@@ -578,7 +582,8 @@ main#main {
 
 .blog-content {
 	display: flex;
-	margin: 35px 15px 35px 0;
+	flex-wrap: wrap;
+	margin: 35px 0 35px 0;
 }
 
 .primary {
@@ -588,9 +593,34 @@ main#main {
 }
 
 .secondary {
-	width: calc(36% - 30px);
-	margin-left: 30px;
+	width: calc(36% - 40px);
+	margin-left: 40px;
+	transition: all .3s;
 }
+
+@media screen and (max-width: 1200px) {
+
+	.secondary {
+		width: calc(36% - 30px);
+		margin-left: 30px;
+	}
+
+} /* 1200px media end */
+
+@media screen and (max-width:  900px) {
+
+	.primary {
+		width: 100%;
+		font-size: 16px;
+		margin-bottom: 80px;
+	}
+
+	.secondary {
+		width: 100%;
+		margin-left: 0;
+	}
+
+} /*  900px media end */
 
 	blockquote {
 		padding: 30px;
@@ -703,6 +733,7 @@ main#main {
 
 	.input-row {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 	}
 
@@ -710,6 +741,22 @@ main#main {
 		display: block;
 		width: calc(100% / 2 - 15px);
 	}
+
+	@media screen and (max-width: 680px) {
+	
+		.input-row {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			flex-direction: column;
+		}
+
+		.input-row > input {
+			display: block;
+			width: 100%;
+		}
+	
+	} /*  680px media end */
 
 	input#search {
 		width: calc(100% - 57px);
@@ -740,27 +787,83 @@ form#comment-form h3 {
 	margin-bottom: 20px;
 }
 
-#comment-form input[type="submit"] {
-	background: var(--primary-color);
+input[type="submit"] {
+	background: #666;
 	color: #FFF;
 	width: 100%;
 	transition: all .3s ease-in-out;
 }
 
-#comment-form input[type="submit"]:hover {
-	background: var(--secondary-color);
-}
-
-#comment-form input[type="submit"]:focus {
-
-}
-
-#comment-form input[type="checkbox"] {
-	
-}
-
-#comment-form input[type="checkbox"]:checked:before {
+input[type="submit"]:hover,
+input[type="submit"]:focus {
 	background: var(--primary-color);
+	cursor: pointer;
+}
+
+.checkbox-row {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 10px 0;
+}
+
+.checkbox-row label {
+	flex: 1;
+	line-height: 1.1;
+	cursor: pointer;
+	color: #676767;
+}
+
+input[type="checkbox"] {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	background: #FFF;
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 2px;
+	padding: 0;
+	position: relative;
+	z-index: 1;
+	margin: 10px 10px 10px 0;
+}
+
+input[type="checkbox"]:focus {
+	border: 1px solid var(--primary-color);
+}
+
+input[type="checkbox"]:before {
+	z-index: 2;
+	content: "";
+	position: absolute;
+	display: inline-block;
+	left: 7px;
+	top: 2px;
+	width: 8px;
+	height: 14px;
+	background: transparent;
+	border-width: 0 3px 3px 0;
+	border-style: solid;
+	border-color: #FFF;
+	transform: rotate(45deg);
+	opacity: 0;
+	transition: .2s ease-in;
+}
+
+input[type="checkbox"]:checked {
+	background: var(--primary-color);
+	border: 1px solid rgba(0,0,0,0);
+}
+
+input[type="checkbox"]:checked:before {
+	opacity: 1;
+}
+
+
+input[type="checkbox"] ~ label:hover {
+	color: var(--secondary-color);
 }
 
 #comment-form input,
@@ -773,16 +876,6 @@ form#comment-form h3 {
 	border-top: 1px solid var(--primary-color);
 }
 
-.checkbox-row {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	margin: 15px 0;
-}
-
-	.checkbox-row input {
-		margin-right: 14px;
-	}
 
 
 
