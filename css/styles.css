@@ -1,5 +1,7 @@
 @charset "UTF-8"; 
-@import "google-fonts.css";
+/*@import "google-fonts.css";*/
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,400&display=swap');
 
 /* Basic reset */
 
@@ -9,6 +11,8 @@ html, body, h1, h2, h3, h4, h5, h6, a, p, span, em, small, strong, sub, sup, mar
     padding: 0;
     border: 0;
 }
+
+
 
 /* Typography */
 html {/*font-size: 62.5%;*/}
@@ -154,6 +158,14 @@ header#header {
 		font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
 	}
 
+	@media screen and (max-width:  999px) {
+	
+		#top-nav {
+			display: none;
+		}
+	
+	} /*  999px media end */
+
 	#top-nav ul {
 		display: flex;
 		text-transform: uppercase;
@@ -193,7 +205,7 @@ header#header {
 
 .hero-container {
 	width: 100%;
-	height: 100vh;
+	height: 90vh;
 	display: flex;
 	color: #FFF;
 	flex-direction: column;
@@ -258,7 +270,6 @@ main#main {
 	padding-top: 100px;
 	padding-bottom: 130px;
 	background: var(--background-one);
-	;
 }
 
 .header-section {
@@ -269,10 +280,9 @@ main#main {
 
 	.before-title {
 		display: block;
-		font-size: 1.1rem;
+		font-size: 1rem;
 		text-transform: uppercase;
-		letter-spacing: 1px;
-		font-weight: 500;
+		font-weight: 400;
 		color: var(--primary-color);
 		
 	}
@@ -327,7 +337,7 @@ main#main {
 	}
 
 	.card:nth-child(1) {
-		flex-basis: calc(100% / 1 - 30px);
+		/*flex-basis: calc(100% / 1 - 30px);*/
 	}
 
 } /* 1024px media end */
@@ -335,7 +345,8 @@ main#main {
 @media screen and (max-width: 680px) {
 
 	.card {
-		flex-basis: calc(100% / 1 - 30px);
+		flex-basis: calc(100% / 1 - 80px);
+		width: 400px;
 	}
 
 } /* 680px media end */
@@ -440,27 +451,31 @@ main#main {
 .team-card {
 	flex-basis: calc(100% / 4 - 30px);
 	margin: 0 15px 30px;
-	border: 1px solid rgba(0,20,90,.05);
+	border: 1px solid rgba(0,20,90,.03);
 	border-radius: 2px;
-	padding: 50px 40px;
+	padding: 30px 20px 40px;
 	text-align: center;
-	box-shadow: 0px 0px 30px 0 rgba(255, 95, 20,.04);
+	box-shadow: 0px 0px 30px 0 rgba(0, 20, 90,.04);
 	transition: all .3s ease-in-out;
 }
 
 .team-card:hover {
 	border: 1px solid transparent;
-	border-bottom: 1px solid var(--primary-color);
-	box-shadow: 0px 0px 30px 0 rgba(255, 95, 20,.14);
+	border: 1px solid rgba(255, 95, 20,.1);
+	box-shadow: 0px 0px 30px 0 rgba(255, 95, 20,.1);
+}
+
+.team-card:hover img {
+	opacity: .8;
 }
 
 	.team-card img {
-		width: 400px;
-		height: 400px;
+		display: inline-block;
+		max-width: 250px;
 		height: auto;
-		display: block;
-		border-radius: 60%;
-		margin-bottom: 30px;
+		padding: 20px;
+		border-radius: 50%;
+		transition: all .3s ease-in-out;
 	}
 
 	.team-card h4 {
@@ -477,6 +492,70 @@ main#main {
 
 	.team-card a:hover {
 		color: var(--primary-color);
+	}
+
+
+/* TESTIMONIALS SECTION */
+
+.testimonials-section {
+	padding-top: 100px;
+	padding-bottom: 130px;
+	background: var(--background-one);
+}
+
+.swiper-container {
+	width: 100%;
+	--swiper-theme-color: var(--secondary-color);
+}
+
+.swiper-wrapper {
+	width: 100%;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+}
+
+	.testimonial {
+		width: 100%;
+		margin: 20px auto 40px;
+		padding: 20px 60px;
+		text-align: center;
+		cursor: all-scroll;
+	}
+
+	.stars {
+		display: inline-block;
+		width: 120px;
+		height: 30px;
+		margin-bottom: 10px;
+		/*background: url('../images/backgrounds/five-stars-150.png');*/
+		background: url('../images/backgrounds/five-stars.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.testimonial-content {
+		font-family: 'Merriweather', Georgia, serif;
+		font-style: italic;
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 1.5;
+		max-width: 650px;
+		margin: 10px auto;
+	}
+
+	.testimonial img {
+		display: inline-block;
+		margin: 20px 20px 10px;
+		max-width: 120px;
+		border-radius: 50%;
+	}
+
+	.review-autor {
+		color: #999;
 	}
 
 
@@ -884,11 +963,11 @@ input[type="checkbox"] ~ label:hover {
 footer#footer {
 	margin-top: auto;
 	background: var(--secondary-color);
-	background: linear-gradient(rgba(30, 42, 77,1), rgba(30, 42, 77,.93)), url('../images/backgrounds/macaraua.jpg');
+	background: linear-gradient(rgba(30, 42, 77,.8), rgba(30, 42, 77,.7)), url('../images/backgrounds/macaraua.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
-	background: #00235A;
+	background-position: center center;
+	/*background: #00235A;*/
 	color: #F9F9F9;
 	text-align: center;
 	position: relative;
@@ -900,7 +979,7 @@ footer#footer {
 	background: #021f49;
 	/*border-top: 1px solid rgba(250,250,250,.1);*/
 	color: #DFDFDF;
-	padding: 35px 0 30px;
+	padding: 15px 0 10px;
 }
 
 .copyright a {text-decoration: none;}
@@ -912,16 +991,30 @@ footer#footer {
 	flex-wrap: wrap;
 }
 
+@media screen and (max-width:  680px) {
+
+	.copy-row {
+		flex-direction: column;
+		justify-content: center;
+	}
+
+} /*  680px media end */
+
+p.rights {
+	font-size: 80%;
+	opacity: .6;
+}
+
 .footer-icons {
 	padding: 12px 0;
 }
 
 .footer-icons a {
 	display: inline-block;
-	width: 30px;
-	height: 30px;
+	width: 24px;
+	height: 24px;
 	margin-left: 10px;
-	opacity: .6;
+	opacity: .5;
 	transition: opacity .2s;
 }
 

@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;0,500;0,700;0,900;1,200;1,400;1,500;1,700;1,900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <link rel="stylesheet" media="screen" href="css/styles.css">
 </head>
 <body>
@@ -53,7 +54,7 @@
 	<div class="wrap">
 		
 		<div class="header-section">
-			<span class="before-title">Construim case de la A - Z</span>
+			<span class="before-title">Construim case de vis, de la A - Z</span>
 			<h2 class="section-title">Serviciile noastre</h2>
 			<div class="header-section-links">
 				<a href="#">Arhitectura si planificare</a>
@@ -164,29 +165,33 @@
 				<img src="images/team/echipa-01.jpg" alt="Team Image">
 				<h4>Mihai Manole</h4>
 				<p>Inginer Constructor Sef</p>
+				<p>Tel: <a href="tel:+40742555298">+40742.555298</a></p>
 			</div><!-- team-card -->
 
 			<div class="team-card">
 				<img src="images/team/echipa-03.jpg" alt="Team Image">
 				<h4>Radu Bobei</h4>
 				<p>Inginer Instalatii Electrice</p>
+				<p>Tel: <a href="tel:+40742555541">+40742.555541</a></p>
 			</div><!-- team-card -->
 
 			<div class="team-card">
 				<img src="images/team/echipa-04.jpg" alt="Team Image">
 				<h4>Toma Cuzin</h4>
 				<p>Arhitect Sef</p>
+				<p>Tel: <a href="tel:+40742555963">+40742.555963</a></p>
 			</div><!-- team-card -->
 
 			<div class="team-card">
 				<img src="images/team/echipa-05.jpg" alt="Team Image">
 				<h4>George Asaftei</h4>
 				<p>Project Manager</p>
+				<p>Tel: <a href="tel:+40742555231">+40742.555231</a></p>
 			</div><!-- team-card -->
 
 			<div class="team-card">
 				<img src="images/team/echipa-06.jpg" alt="Team Image">
-				<h4>Diana Enescu</h4>
+				<h4>Ana-Maria Dumitru</h4>
 				<p>Interior Designer</p>
 				<p>Tel: <a href="tel:+40742555888">+40742.555888</a></p>
 			</div><!-- team-card -->
@@ -195,18 +200,77 @@
 				<img src="images/team/echipa-07.jpg" alt="Team Image">
 				<h4>Robert Dobrescu</h4>
 				<p>Inginer Instalatii</p>
+				<p>Tel: <a href="tel:+40742555656">+40742.555656</a></p>
 			</div><!-- team-card -->
 
 			<div class="team-card">
 				<img src="images/team/echipa-08.jpg" alt="Team Image">
-				<h4>Laura Loghin</h4>
+				<h4>Nicoleta Loghin</h4>
 				<p>Economist</p>
+				<p>Tel: <a href="tel:+40742555032">+40742.555032</a></p>
 			</div><!-- team-card -->
 
 		</div><!-- team-cards -->
 
 	</div><!-- wrap -->
 </section><!-- team-section -->
+
+<!-- Testimonials -->
+<div class="testimonials-section">
+	<div class="wrap">
+
+		<div class="header-section">
+			<span class="before-title">Ce spun clientii nostri</span>
+			<h3 class="section-title">Recenzii</h3>
+		</div><!-- header-section -->
+
+	<div class="swiper-container testimonials-carousel">
+		
+
+		<div id="testimonials" class="testimonials swiper-wrapper">
+
+			<div class="testimonial swiper-slide">
+				<span class="stars"></span>
+				<p class="testimonial-content">Suntem foarte fericiti in noua noastra casa si ne felicitam ca am ales sa lucram cu voi. Ati construit mai mult decat o casa, ati creat un camin pentru familia noastra!</p>
+				<img src="images/testimonial/testimonial-09.jpg" alt="Imaginea autorului recenziei" class="client">
+				<p class="review-autor">Fam. Dinulescu</p>
+			</div><!-- testimonial -->
+
+			<div class="testimonial swiper-slide">
+				<span class="stars"></span>
+				<p class="testimonial-content">Am visat de mult timp la casa mea. Echipa voastra mi-a depasit asteptarile si sunt foarte multumita de rezultatul final. Va multumesc si va recomand cu drag!</p>
+				<img src="images/testimonial/testimonial-04.jpg" alt="Imaginea autorului recenziei" class="client">
+				<p class="review-autor">Dana Bordianu</p>
+			</div><!-- testimonial -->
+
+			<div class="testimonial swiper-slide">
+				<span class="stars"></span>
+				<p class="testimonial-content">De la planificare, la constructie si amenajare, totul a decurs lin si firesc. Sunteti o echipa de adevarati profesionisti cu care imi doresc sa lucrez si pe viitor.</p>
+				<img src="images/testimonial/testimonial-07.jpg" alt="Imaginea autorului recenziei" class="client">
+				<p class="review-autor">Mihnea Predescu</p>
+			</div><!-- testimonial -->
+
+			<div class="testimonial swiper-slide">
+				<span class="stars"></span>
+				<p class="testimonial-content">Ne-am dorit o casa in care sa locuiasca cu placere si generatiile urmatoare. Cu totii suntem foarte multumiti de materialele folosite si serviciile voastre!</p>
+				<img src="images/testimonial/testimonial-03.jpg" alt="Imaginea autorului recenziei" class="client">
+				<p class="review-autor">Fam. Cercovschi</p>
+			</div><!-- testimonial -->
+
+
+		</div><!-- testimonials -->
+
+		<!-- If we need pagination -->
+		<div class="swiper-pagination"></div>
+
+		<!-- If we need navigation buttons -->
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+
+	</div><!-- swiper-container -->
+
+	</div><!-- wrap -->
+</div><!-- testimonials-section -->
 
 
 </main><!-- #main -->
@@ -235,6 +299,7 @@
 	</div><!-- wrap -->
 </div>
 
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="js/scripts.js"></script>
 
 </body>
