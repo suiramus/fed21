@@ -13,7 +13,6 @@ html, body, h1, h2, h3, h4, h5, h6, a, p, span, em, small, strong, sub, sup, mar
 }
 
 
-
 /* Typography */
 html {/*font-size: 62.5%;*/}
 body {font-size: 1rem; line-height: 1.5; }
@@ -107,7 +106,8 @@ h4, .h4 {font-size: 1.8rem; }
 	padding-right: var(--padding-right);
 }
 
-section {
+section,
+.section {
 	padding-top: 100px;
 	padding-bottom: 100px;
 }
@@ -149,7 +149,25 @@ header#header {
 	/* Hamburger Icon */
 
 	#ham {
-		display: none; /*Visible under 900px*/
+		display: none;
+		width: 40px;
+		height: 40px;
+		background: url('svg/ham.svg');
+		background-size: 40px 40px;
+		background-position: center;
+		background-repeat: no-repeat;
+		cursor: pointer;
+		transition: all .3s;
+	}
+
+	#ham.ham-close {
+		width: 40px;
+		height: 40px;
+		background: url('svg/close.svg');
+		background-size: 40px 40px;
+		background-position: center;
+		background-repeat: no-repeat;
+		transition: all .3s;
 	}
 
 	/* Top Navigation: #top-nav > ul > li > a */
@@ -157,14 +175,6 @@ header#header {
 	#top-nav {
 		font-family: 'Fira Sans', Helvetica, Arial, sans-serif;
 	}
-
-	@media screen and (max-width:  999px) {
-	
-		#top-nav {
-			display: none;
-		}
-	
-	} /*  999px media end */
 
 	#top-nav ul {
 		display: flex;
@@ -191,6 +201,62 @@ header#header {
 		color: #FFF;
 		text-shadow: 2px 2px 6px rgba(130, 50, 10,.8);
 	}
+
+@media screen and (max-width:  999px) {
+
+	#header-wrap {
+		height: 70px;
+	}
+
+	#logo a {
+		font-size: 1.5rem;
+	}
+
+	#ham {
+		display: block;
+	}
+
+	#top-nav {
+		display: none;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		right: 0;
+		top: 70px;
+		width: 100%;
+		height: auto;
+		background: var(--secondary-color);
+		z-index: 100;
+	}
+
+	#top-nav ul {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	#top-nav ul li {
+		display: block;
+		width: 100%;
+		border: none;
+		color: #FFF;
+		/*border-bottom: 1px solid rgba(255,255,255,.07);
+		border-top: 1px solid rgba(0,0,0,.07);*/
+		text-align: center;
+	}
+
+	#top-nav ul li a:hover, #top-nav ul li a.current {
+		border-top: 4px solid transparent;
+		display: block;
+		width: 100%;
+	}
+
+	#top-nav.top-nav-open {
+		display: flex;
+	}
+
+} /*  999px media end */
+
 
 /* HERO SECTION */
 
@@ -230,6 +296,24 @@ header#header {
 		font-weight: 700;
 		text-shadow: 2px 5px 10px rgba(0,0,0,.7);
 	}
+
+	.hero-title,
+	.hero-description {
+		transition: all .3s ease-in-out;
+	}
+
+	@media screen and (max-width:  800px) {
+	
+		.hero-title {
+			font-size: 2.5rem;
+		}
+
+		.hero-description {
+			font-size: 1rem;
+			line-height: 1.1;
+		}
+	
+	} /*  800px media end */
 
 	.button-group {
 		text-align: center;
@@ -284,7 +368,6 @@ main#main {
 		text-transform: uppercase;
 		font-weight: 400;
 		color: var(--primary-color);
-		
 	}
 
 	.section-title {
@@ -437,6 +520,44 @@ main#main {
 	}
 
 
+/* SERVICII HOME PAGE */
+
+.servicii {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.serviciu {
+	width: calc(33.333% - 30px);
+	margin: 0 15px 30px 15px;
+}
+
+@media screen and (max-width:  1024px) {
+
+	.serviciu {
+		width: calc(50% - 30px);
+	}
+
+} /*  1024px media end */
+
+
+	.serviciu h3 {
+		font-size: 1.3rem;
+		font-weight: 500;
+	}
+
+	@media screen and (max-width:  680px) {
+
+		.serviciu h3 {
+			font-size: 1rem;
+			font-weight: 400;
+		}
+
+	} /*  680px media end */
+
+
+
 /* TEAM SECTION */
 
 
@@ -449,7 +570,7 @@ main#main {
 }
 
 .team-card {
-	flex-basis: calc(100% / 4 - 30px);
+	max-width: 230px;
 	margin: 0 15px 30px;
 	border: 1px solid rgba(0,20,90,.03);
 	border-radius: 2px;
@@ -458,6 +579,15 @@ main#main {
 	box-shadow: 0px 0px 30px 0 rgba(0, 20, 90,.04);
 	transition: all .3s ease-in-out;
 }
+
+@media screen and (max-width:  540px;) {
+
+	.team-card {
+		max-width: 260px;
+	}
+	
+
+} /*  540px; media end */
 
 .team-card:hover {
 	border: 1px solid transparent;
@@ -471,7 +601,7 @@ main#main {
 
 	.team-card img {
 		display: inline-block;
-		max-width: 250px;
+		max-width: 100%;
 		height: auto;
 		padding: 20px;
 		border-radius: 50%;

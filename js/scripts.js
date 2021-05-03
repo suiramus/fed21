@@ -1,4 +1,14 @@
 
+// Responsive Menu
+
+function menuFunction(hamburgerIcon) {
+	let topNav = document.getElementById('top-nav');
+	hamburgerIcon.classList.toggle("ham-close");
+	topNav.classList.toggle("top-nav-open");
+}
+
+
+
 // Testimonial Carousel
 // https://swiperjs.com/
 
