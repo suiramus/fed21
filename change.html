@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>onclick</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" media="screen" href="style.css">
+</head>
+<body>
+
+
+<img id="bec" src="off.gif" width="150px">
+<br><br>
+<button onclick="schimbaImaginea();">Aprinde/Stinge Becul</button>
+<script>
+	/*
+		Functia schimbaImaginea()
+		Inlocuieste sursa unei imagini (face schimb de doua imagini: on.gif si off.gif),
+		de fiecare data cand se da click pe un button [ onclick event ]
+	*/
+	function schimbaImaginea(){
+		// Selectam imaginea si o punem in variabila "myImage"
+		let myImage = document.getElementById("bec");
+		// Aflam valoarea src a imaginii
+		let myImageSrc = myImage.src;
+		// Verificam in consola ce valoare returneaza myImageSrc
+		console.log("Image src: " + myImageSrc);
+		// Returneaza: Image src: file:///C:/Users/Marius/Desktop/off.gif
+		// Deci returneaza URL absolut ( file:///C:/Users/Marius/Desktop/off.gif )
+		// Nu returneaza un URL realtiv, cum ma asteptam (off.gif)
+
+		// Pentru conditional comparam URL absolut
+		if (myImageSrc == "file:///C:/Users/Kamera/Desktop/change/off.gif") {
+			// Daca e imaginea initiala (off.gif) o schimbam in (on.gif)
+			// Ca sa schimbam sursa, se poate folosi si URL relativ
+			myImage.src = "on.gif";
+		} else {
+			// Daca imaginea a fost schimbata si acum e (on.gif)
+			// O schimbam in imaginea initiala (off.gif)
+			myImage.src = "off.gif";
+		}
+	}
+
+	/*
+		1. Cand schimbam imaginea, putem folosi
+		un URL absolute ( file:///C:/Users/Marius/Desktop/off.gif )
+		sau un URL relativ ( off.gif ) 
+		2. Cand returneaza sursa ( myImageSrc = document.getElementById("bec").src )
+		returneaza mereu URL absolut ( file:///C:/Users/Marius/Desktop/off.gif )
+		De accea, in conditional, aseara, nu functiona
+		if (myImageSrc == "off.gif") - returna mereu false, fiindca de fapt comparam
+		if ("file:///C:/Users/Marius/Desktop/off.gif" == "off.gif")
+		3. Referinta: https://www.w3schools.com/Jsref/prop_img_src.asp
+	*/
+</script>
+
+
+
+
+</body>
+</html>
