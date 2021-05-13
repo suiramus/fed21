@@ -2,8 +2,11 @@
 // Responsive Menu
 
 function menuFunction(hamburgerIcon) {
+	// Selecteaza meniul
 	let topNav = document.getElementById('top-nav');
+	// Schimba iconita din hamburger in close
 	hamburgerIcon.classList.toggle("ham-close");
+	// Adauga clasa top-nav-open la meniu pentru a fi vizibil
 	topNav.classList.toggle("top-nav-open");
 }
 
@@ -15,7 +18,7 @@ function menuFunction(hamburgerIcon) {
 const testimonialswiper = new Swiper('.testimonials-carousel', {
 	// Optional parameters
 	// direction: 'vertical',
-	loop: true,
+	loop: false,
 	slidesPerView: 1,
 
 	// If we need pagination
@@ -29,9 +32,12 @@ const testimonialswiper = new Swiper('.testimonials-carousel', {
 	},
 
 	centeredSlides: true,
-		autoplay: {
+
+	autoplay: {
 		delay: 4500,
 		disableOnInteraction: true,
+		pauseOnMouseEnter: true,
+		stopOnLastSlide: true,
 	},
 
 	// Navigation arrows
