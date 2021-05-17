@@ -1378,6 +1378,71 @@ p.form-info {
 } /* 900px media end */
 
 
+/* CTA */
+
+
+
+.call-to-action {
+	background: #00235A;
+	color: #FFF;
+	background: linear-gradient(to right, rgba(255, 94, 20,1), rgba(255, 94, 20,.8), rgba(0, 20, 90,.8), rgba(0, 20, 90,1)), url('../images/house.jpg');
+	background-position: center;
+	background-attachment: fixed;
+	background-size: cover;
+	padding-top: 140px;
+	padding-bottom: 140px;
+}
+
+.cta-row {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+	.cta-mesaj {
+		padding: 0 40px;
+	}
+
+	.cta-mesaj p {
+		font-size: 1.2rem;
+	}
+
+	h4.cta-title {
+		color: #FFF;
+		font-size: 3rem;
+		line-height: 1.1;
+		margin-bottom: 10px;
+	}
+
+	.cta-button a {
+		display: block;
+		padding: 20px 35px;
+		background: var(--primary-color);
+		color: #FFF;
+		text-decoration: none;
+		font-size: 18px;
+		line-height: 1.5;
+		border-radius: 4px;
+		transition: all .3s;
+	}
+
+	.cta-button a:hover {
+		opacity: .8;
+	}
+
+	@media screen and (max-width: 880px) {
+	
+		.cta-row {
+			flex-direction: column;
+		}
+
+		.cta-mesaj {
+			margin-bottom: 40px;
+			text-align: center;
+		}
+	
+	} /* 880px media end */
+
 /* FOOTER */
 
 footer#footer {
