@@ -14,7 +14,9 @@ html, body, h1, h2, h3, h4, h5, h6, a, p, span, em, small, strong, sub, sup, mar
 
 
 /* Typography */
-html {/*font-size: 62.5%;*/}
+html {
+	/*font-size: 62.5%;*/
+}
 body {font-size: 1rem; line-height: 1.5; }
 a, a:visited {color: inherit; }
 nav a {text-decoration: none;}
@@ -68,11 +70,11 @@ img {border-style: none;}
 	}
 
 	body {
-		opacity:0;
+		/*opacity:0;
 		animation:pageFadeIn ease-in 1;
 		animation-fill-mode: forwards;
 		animation-duration: .5s;
-		animation-delay: .1s
+		animation-delay: .1s*/
 	}
 
 body {
@@ -649,7 +651,7 @@ main#main {
 
 	.team-card:hover img {
 		opacity: .8;
-		border: 1px solid rgba(255, 90, 20, .6);
+		/*border: 1px solid rgba(255, 90, 20, .6);*/
 	}
 
 	.team-card h4 {
@@ -1312,6 +1314,27 @@ p.form-info {
 	background-repeat: no-repeat;
 }
 
+.anchor-links {
+	padding: 12px 0;
+}
+
+	.anchor-links-row {
+		text-align: center;
+	}
+
+	a.scroll-link {
+		display: inline-block;
+		padding: 5px 10px;
+		text-decoration: none;
+		border-radius: 4px;
+		transition: all .3s;
+	}
+
+	a.scroll-link:hover {
+		color: #FFF;
+		background: var(--primary-color);
+	}
+
 .servicii-extinse-section {
 	background: var(--background-one);
 }
@@ -1324,7 +1347,23 @@ p.form-info {
 .serviciu-extins {
 	display: flex;
 	margin-bottom: 0;
+	position: relative;
 }
+
+	.serviciu-extins .to-top {
+		position: absolute;
+		bottom: -15px;
+		z-index: 10;
+		width: 30px;
+		height: 30px;
+		background: #FFF url('../svg/arrow-up.svg');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 30px;
+		border-radius: 50%;
+		color: #FFF;
+		left: calc(50% - 15px);
+	}
 
 .serviciu-extins img {
 	display: block;
