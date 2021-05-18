@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Contact | Dream Construct</title>
+<title>Lucrarile noastre | Dream Construct</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;0,500;0,700;0,900;1,200;1,400;1,500;1,700;1,900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
@@ -22,21 +22,21 @@
 				<ul>
 					<li><a href="index.html" title="Acasa">Acasa</a></li>
 					<li><a href="servicii.html" title="Servicii">Servicii</a></li>
-					<li><a href="lucrari.html" title="Lucrari">Lucrari</a></li>
+					<li><a class="current" href="lucrari.html" title="Lucrari">Lucrari</a></li>
 					<li><a href="blog.html" title="Blog">Blog</a></li>
-					<li><a class="current" href="contact.html" title="Contact">Contact</a></li>
+					<li><a href="contact.html" title="Contact">Contact</a></li>
 				</ul>
 			</nav>
 		</div><!-- header-wrap -->
 	</div><!-- wrap -->
 </header>
 
-<div class="page-header page-header-contact">
+<div class="page-header page-header-lucrari">
 	<div class="wrap">
 		<div class="page-header-container">
-			<h1 class="page-header-title">Contact</h1>
+			<h1 class="page-header-title">Lucrarile noastre</h1>
 			<div class="breadcrumb">
-				<a href="index.html" title="Prima pagina">Acasa</a> &raquo; Contact
+				<a href="index.html" title="Prima pagina">Acasa</a> &raquo; Lucrari
 			</div><!-- breadcrumb -->
 		</div><!-- page-header-container -->
 	</div><!-- wrap -->
@@ -44,67 +44,62 @@
 
 <main id="main">
 
-<div class="section contact-info background-one">
+<div class="section lucrari-section">
 	<div class="wrap">
-		<div class="contact-info-row">
-			<div class="contact-info-item">
-				<img class="icon-svg" role="img" src="svg/pin-map-fill.svg" alt="Pin Map Icon">
-				<h4>Adresa</h4>
-				<p>DreamConstruct SRL</p>
-				<p>Mun. Arad, România<br>Bl. Revoluției nr. 56<br>
-				Cod postal: 310051</p>
-			</div><!-- contact-info-item -->
-			<div class="contact-info-item">
-				<img class="icon-svg" role="img" src="svg/clock-history.svg" alt="Clock Icon">
-				<h4>Program</h4>
-				<p>Luni-Vineri: 09 - 17<br>
-				Sambata: 09 - 14<br>
-				Duminica: Inchis</p>
-			</div><!-- contact-info-item -->
-			<div class="contact-info-item">
-				<img class="icon-svg" role="img" src="svg/person-lines-fill.svg" alt="Contact Icon">
-				<h4>Contact</h4>
-				<p>Tel: <a href="tel:+4057210734">+4(0257)210734</a><br>Fax: +4(0257)210734</p>
-				<p>Email: <a href="mailto:office@dreamcons.ro">office@dreamcons.ro</a></p>
 
-			</div><!-- contact-info-item -->
-		</div><!-- contact-info-row -->
+		<div class="filter-wrap"><span>Sorteaza: </span>
+				<button class="button is-checked" data-filter="*">Toate lucrarile</button>
+				<button class="button" data-filter=".interior">Interior</button>
+				<button class="button" data-filter=".exterior">Exterior</button>
+				<button class="button" data-filter=".interior,.bucatarie">Bucatarie</button>
+				<button class="button" data-filter=".interior,.dormitor">Dormitor</button>
+		</div><!-- filter-wrap -->
+
+		<br><br><br>
+
+		<div class="gallery">
+
+			<div class="gal-item interior">
+				<a href="images/gallery/big/gal-01.jpg"><img src="images/gallery/thumb/gal-01.jpg" alt="Imagine lucrari"></a>
+			</div><!-- gal-item -->
+
+			<div class="gal-item exterior">
+				<a href="images/gallery/big/gal-02.jpg"><img src="images/gallery/thumb/gal-02.jpg" alt="Imagine lucrari"></a>
+			</div><!-- gal-item -->
+
+			<div class="gal-item dormitor">
+				<a href="images/gallery/big/gal-03.jpg"><img src="images/gallery/thumb/gal-03.jpg" alt="Imagine lucrari"></a>
+			</div><!-- gal-item -->
+
+			<div class="gal-item dormitor">
+				<a href="images/gallery/big/gal-04.jpg"><img src="images/gallery/thumb/gal-04.jpg" alt="Imagine lucrari"></a>
+			</div><!-- gal-item -->
+
+			<div class="gal-item exterior dormitor">
+				<a href="images/gallery/big/gal-05.jpg"><img src="images/gallery/thumb/gal-05.jpg" alt="Imagine lucrari"></a>
+			</div><!-- gal-item -->
+
+			<div class="gal-item interior dormitor">
+				<a href="images/gallery/big/gal-06.jpg"><img src="images/gallery/thumb/gal-06.jpg" alt="Imagine lucrari"></a>
+			</div><!-- gal-item -->
+
+			<div class="gal-item interior bucatarie">
+				<a href="images/gallery/big/gal-07.jpg"><img src="images/gallery/thumb/gal-07.jpg" alt="Imagine lucrari"></a>
+			</div><!-- gal-item -->
+
+			<div class="gal-item interior bucatarie">
+				<a href="images/gallery/big/gal-08.jpg"><img src="images/gallery/thumb/gal-08.jpg" alt="Imagine lucrari"></a>
+			</div><!-- gal-item -->
+
+			<div class="gal-item interior dormitor">
+				<a href="images/gallery/big/gal-09.jpg"><img src="images/gallery/thumb/gal-09.jpg" alt="Imagine lucrari"></a>
+			</div><!-- gal-item -->
+
+		</div><!-- gallery -->
 	</div><!-- wrap -->
-</div><!-- contact-info -->
+</div><!-- lucrari-section -->
 
-<div class="section cf-section">
-	<div class="wrap">
-		<div class="form-container">
-			<h3 class="form-title">Trimite-ne un mesaj</h3>
-			<p class="form-info">Cu ajutorul acestui formular ne poti pune intrebari sau poti face o programare.<br>In timpul programului de lucru rapundem in 15 minute</p>
-			<form id="contact-form" action="" method="POST">
-				<div class="input-row">
-					<input type="text" name="nume" id="nume" placeholder="Nume" required>
-					<input type="text" name="prenume" id="prenume" placeholder="Prenume" required>
-				</div><!-- input-row -->
-				<div class="input-row">
-					<input type="email" name="email" id="email" placeholder="Email" required>
-					<input type="tel" name="tel" id="tel" placeholder="Telefon" required>
-				</div><!-- input-row -->
-				<textarea name="mesaj" id="mesaj" cols="60" rows="8" placeholder="Mesajul dumneavoastra" required="true"></textarea>
-				<div class="checkbox-row">
-					<input type="checkbox" value="accept" name="acceptare-conditii" id="acceptare-conditii" required>
-					<label for="acceptare-conditii">Am citit si sunt de acord cu <a href="#">Termenii si conditiile</a> de utilizare a site-ului</label>
-				</div><!-- checkbox-row -->
-				<div class="checkbox-row">
-					<input type="checkbox" value="accept" name="newsletter" id="newsletter">
-					<label for="newsletter">Vreau sa ma abonez la newsletter</label>
-				</div><!-- checkbox-row -->
-				<input type="submit" value="Trimite mesajul" name="submit" id="contact-form-submit">
-			</form>
-		</div><!-- form-container -->
-	</div><!-- wrap -->
-</div><!-- cf-section -->
 
-<!-- Map Section -->
-<div class="map-section">
-	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7234.563397970662!2d21.32215088959662!3d46.178986989151404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47459854bf40fbdf%3A0xa84a10e79703f06a!2sBulevardul%20Revolu%C8%9Biei%2056%2C%20Arad!5e0!3m2!1sro!2sro!4v1621243911273!5m2!1sro!2sro" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</div><!-- map-section -->
 
 </main><!-- #main -->
 
@@ -165,6 +160,45 @@
 
 <script src="js/swiper.min.js"></script>
 <script src="js/scripts.js"></script>
+
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script>
+	var elem = document.querySelector('.gallery');
+	var iso = new Isotope( elem, {
+	  // options
+	  itemSelector: '.gal-item',
+	  layoutMode: 'masonry',
+	});
+
+
+	// filter functions
+	var filterFns = {
+	  // show if number is greater than 50
+	  numberGreaterThan50: function( itemElem ) {
+	    var number = itemElem.querySelector('.number').textContent;
+	    return parseInt( number, 10 ) > 50;
+	  },
+	  // show if name ends with -ium
+	  ium: function( itemElem ) {
+	    var name = itemElem.querySelector('.name').textContent;
+	    return name.match( /ium$/ );
+	  }
+	};
+
+
+	// bind filter button click
+	var filtersElem = document.querySelector('.filter-wrap');
+	filtersElem.addEventListener( 'click', function( event ) {
+	  // only work with buttons
+	  if ( !matchesSelector( event.target, 'button' ) ) {
+	    return;
+	  }
+	  var filterValue = event.target.getAttribute('data-filter');
+	  // use matching filter function
+	  filterValue = filterFns[ filterValue ] || filterValue;
+	  iso.arrange({ filter: filterValue });
+	})
+</script>
 
 </body>
 </html>

@@ -10,38 +10,7 @@ function menuFunction(hamburgerIcon) {
 	topNav.classList.toggle("top-nav-open");
 }
 
-
-
-// Testimonial Carousel
-// https://swiperjs.com/
-
-const testimonialswiper = new Swiper('.testimonials-carousel', {
-	// Optional parameters
-	// direction: 'vertical',
-	loop: false,
-	slidesPerView: 1,
-	// If we need pagination
-	pagination: {
-		el: '.swiper-pagination',
-		clickable: true,
-	},
-	keyboard: {
-		enabled: true,
-	},
-	centeredSlides: true,
-	autoplay: {
-		delay: 4500,
-		disableOnInteraction: true,
-		pauseOnMouseEnter: true,
-		stopOnLastSlide: true,
-	},
-	// Navigation arrows
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
-});
-
+// ===================================== //
 
 // Scroll to anchor
 // https://perishablepress.com/vanilla-javascript-scroll-anchor/
@@ -87,3 +56,26 @@ const testimonialswiper = new Swiper('.testimonials-carousel', {
 			}
 		}, 100);
 	} // scrollAnchors ends here
+
+
+// ===================================== //
+
+// Scroll to top button
+// HTML: <a id="scroll-to-top" class="scroll" href="#topscroll" title="Deruleaza pana sus"></a>
+// Selecteaza butonul "#scroll-to-top"
+var scrollButton = document.getElementById('scroll-to-top');
+// On scroll
+window.onscroll = function() {
+	scrollFunction()
+};
+function scrollFunction() {
+	// Daca distanta fata de top este mai mare de 400px
+	if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+		// console.log(document.documentElement.scrollTop);
+		scrollButton.style.display = "block";
+	} else {
+		scrollButton.style.display = "none";
+	}
+} // Scroll to top END
+
+// ===================================== //
