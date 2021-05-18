@@ -160,12 +160,29 @@
 
 <script src="js/isotope.pkgd.min.js"></script>
 <script>
-	var elem = document.querySelector('.gallery');
+	/*var elem = document.querySelector('.gallery');
+
 	var iso = new Isotope( elem, {
-	  // options
-	  itemSelector: '.gal-item',
-	  layoutMode: 'masonry',
+		// options
+		itemSelector: '.gal-item',
+		layoutMode: 'masonry',
 	});
+	*/
+
+	var elem = document.querySelector('.gallery');
+	var iso;
+
+	imagesLoaded( elem, function() {
+	  // init Isotope after all images have loaded
+	  iso = new Isotope( elem, {
+	  	itemSelector: '.gal-item',
+		layoutMode: 'masonry',
+	    percentPosition: true,
+	  });
+	});
+
+
+
 
 	// filter functions
 	var filterFns = {
