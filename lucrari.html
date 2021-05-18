@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
 <meta charset="utf-8">
 <title>Lucrarile noastre | Dream Construct</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;0,500;0,700;0,900;1,200;1,400;1,500;1,700;1,900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
-<link rel="stylesheet" media="screen" href="css/swiper.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;0,500;0,700;0,900;1,200;1,400;1,500;1,700;1,900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" media="screen" href="css/styles.css">
 </head>
 <body id="topscroll">
@@ -47,24 +46,22 @@
 <div class="section lucrari-section">
 	<div class="wrap">
 
-		<div class="filter-wrap"><span>Sorteaza: </span>
-				<button class="button is-checked" data-filter="*">Toate lucrarile</button>
-				<button class="button" data-filter=".interior">Interior</button>
-				<button class="button" data-filter=".exterior">Exterior</button>
-				<button class="button" data-filter=".interior,.bucatarie">Bucatarie</button>
-				<button class="button" data-filter=".interior,.dormitor">Dormitor</button>
+		<div id="lucrari-buttons" class="filter-wrap"><span>Sorteaza: </span>
+				<button class="btn-filter btn-active" data-filter="*">Toate lucrarile</button>
+				<button class="btn-filter" data-filter=".interior">Interior</button>
+				<button class="btn-filter" data-filter=".exterior">Exterior</button>
+				<button class="btn-filter" data-filter=".interior,.bucatarie">Bucatarie</button>
+				<button class="btn-filter" data-filter=".interior,.dormitor">Dormitor</button>
 		</div><!-- filter-wrap -->
 
-		<br><br><br>
-
-		<div class="gallery">
+		<div class="gallery gallery-lucrari">
 
 			<div class="gal-item interior">
-				<a href="images/gallery/big/gal-01.jpg"><img src="images/gallery/thumb/gal-01.jpg" alt="Imagine lucrari"></a>
+				<a href="images/gallery/big/gal-01.jpg" data-caption="Lucrari DreamConstruction" title="Image 01"><img src="images/gallery/thumb/gal-01.jpg" alt="Imagine lucrari"></a>
 			</div><!-- gal-item -->
 
 			<div class="gal-item exterior">
-				<a href="images/gallery/big/gal-02.jpg"><img src="images/gallery/thumb/gal-02.jpg" alt="Imagine lucrari"></a>
+				<a href="images/gallery/big/gal-02.jpg" title="Image 02"><img src="images/gallery/thumb/gal-02.jpg" alt="Imagine lucrari"></a>
 			</div><!-- gal-item -->
 
 			<div class="gal-item dormitor">
@@ -161,7 +158,7 @@
 <script src="js/swiper.min.js"></script>
 <script src="js/scripts.js"></script>
 
-<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
 <script>
 	var elem = document.querySelector('.gallery');
 	var iso = new Isotope( elem, {
@@ -169,7 +166,6 @@
 	  itemSelector: '.gal-item',
 	  layoutMode: 'masonry',
 	});
-
 
 	// filter functions
 	var filterFns = {
@@ -185,7 +181,6 @@
 	  }
 	};
 
-
 	// bind filter button click
 	var filtersElem = document.querySelector('.filter-wrap');
 	filtersElem.addEventListener( 'click', function( event ) {
@@ -197,7 +192,86 @@
 	  // use matching filter function
 	  filterValue = filterFns[ filterValue ] || filterValue;
 	  iso.arrange({ filter: filterValue });
-	})
+	});
+</script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script>
+	// Initializare Fancybox:
+	$('.gallery-lucrari').fancybox({
+		caption : function( instance, item ) {
+				// Daca este setata data-caption, returneaza data-caption, else returneaza title attr
+		        var caption = $(this).data('caption') ? $(this).data('caption') : $(this).attr('title');
+		        // console.log(this);
+		        return caption;
+		 },
+		// Options will go here
+		selector : '.gal-item a:visible', // Arata doar imaginile vizibile (dupa filtrare)
+		buttons: [
+			// "zoom",
+			"share",
+			"slideShow",
+			"fullScreen",
+			//"download",
+			"thumbs",
+			"close"
+		],
+		// Transition effect between slides
+		// Possible values: false (disable), "fade", "slide", "circular", "tube", "zoom-in-out", "rotate"
+		transitionEffect: "slide",
+		// Should display counter at the top left corner
+		infobar: true,
+		// Disable right-click and use simple image protection for images
+		protect: true,
+		// Open/close animation type
+		// Values: false (disable), "zoom" (default), "fade", "zoom-in-out"
+		animationEffect: "zoom",	
+
+		lang: "ro",
+		i18n: {
+			en: {
+				CLOSE: "Close",
+				NEXT: "Next",
+				PREV: "Previous",
+				ERROR: "The requested content cannot be loaded. <br/> Please try again later.",
+				PLAY_START: "Start slideshow",
+				PLAY_STOP: "Pause slideshow",
+				FULL_SCREEN: "Full screen",
+				THUMBS: "Thumbnails",
+				DOWNLOAD: "Download",
+				SHARE: "Share",
+				ZOOM: "Zoom"
+			},
+			ro: {
+				CLOSE: "Inchide",
+				NEXT: "Inainte",
+				PREV: "Inapoi",
+				ERROR: "Continutul nu poate fi incarcat. <br/> Va rugam incercati mai tarziu.",
+				PLAY_START: "Start slideshow",
+				PLAY_STOP: "Pause slideshow",
+				FULL_SCREEN: "Ecran complet",
+				THUMBS: "Miniaturi",
+				DOWNLOAD: "Descarca",
+				SHARE: "Share",
+				ZOOM: "Zoom"
+			}
+		}, // i18n
+
+	}); // Initializare Fancybox Ends
+</script>
+
+<script>
+	// Adauga clasa "btn-active" la butoanele de filtrare pentru Isotope
+	var buttonsWrap = document.getElementById("lucrari-buttons"); // Wrapper pt butoane
+	var btns = buttonsWrap.getElementsByClassName("btn-filter"); 
+	for (var i = 0; i < btns.length; i++) {
+		btns[i].addEventListener("click", function() {
+			var current = document.getElementsByClassName("btn-active");
+			current[0].className = current[0].className.replace(" btn-active", "");
+			this.className += " btn-active";
+		});
+	}
 </script>
 
 </body>
