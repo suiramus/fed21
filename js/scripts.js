@@ -79,3 +79,16 @@ function scrollFunction() {
 } // Scroll to top END
 
 // ===================================== //
+
+// Mesaj formular
+
+
+// formSubmitMessage.style.display="none";
+
+function formMessage(e){
+	e.preventDefault();
+	let formSubmitMessage = document.getElementById('mesaj-trimis');
+	formSubmitMessage.style.display="block";
+}
+
+// ===================================== //
