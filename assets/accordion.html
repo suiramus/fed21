@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Accordion - Vanilla JS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	
+
+	*, *:before, *:after {
+		box-sizing: border-box;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		overflow-y: scroll;
+	}
+
+	body {
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+		font-size: 16px;
+		line-height: 1.5;
+	}
+
+	.wrapper {
+		max-width: 800px;
+		margin: 30px auto;
+		padding: 20px 30px;
+		border-radius: 4px;
+		background: rgba(0,0,0,.05);
+	}
+
+	.accordion {
+		margin: 40px 0;
+	}
+
+	.acc-container {
+		margin: 0 0 10px;
+		max-width: 100%;
+		overflow: hidden;
+	}
+
+		.acc-title {
+			max-width: 100%;
+			background: #222;
+			color: #FFF;
+			border-radius: 4px;
+			padding: 14px 20px;
+			font-weight: normal;
+			position: relative;
+			transition: all .3s ease-in-out;
+		}
+
+			.acc-active .acc-title,
+			.acc-title:hover {
+				background: #565656;
+				cursor: pointer;
+			}
+
+			.acc-title:after {
+				content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewbox='0 0 25 25'%3E%3Cline x1='6' y1='12.5' x2='19' y2='12.5' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' vector-effect='non-scaling-stroke' /%3E%3Cline y1='6' x1='12.5' y2='19' x2='12.5' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' vector-effect='non-scaling-stroke' /%3E%3C/svg%3E"); /*Plus sign*/
+				position: absolute;
+				right: 20px;
+				top: 50%;
+				margin-top: -12.5px;
+				width: 25px;
+				height: 25px;
+				display: inline-block;
+			}
+
+			.acc-active .acc-title:after {
+				content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewbox='0 0 25 25'%3E%3Cline x1='6' y1='12.5' x2='19' y2='12.5' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' vector-effect='non-scaling-stroke' /%3E%3C/svg%3E"); /*Minus sign*/
+			}
+
+		.acc-content {
+			width: 100%;
+			height: auto;
+			overflow: hidden;
+			max-height: 0;
+			opacity: 0;
+			padding: 0 20px;
+			transition: all 0.2s ease-in-out;
+		}
+
+		.acc-active .acc-content {
+			padding: 20px;
+			max-height: 500px;
+			overflow-y: auto;
+			opacity: 1;
+		}
+
+	/*
+	Plus Sign
+	<svg viewbox="0 0 25 25">
+	  <line x1="6" y1="12.5" x2="19" y2="12.5" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" vector-effect="non-scaling-stroke" />
+	  <line y1="6" x1="12.5" y2="19" x2="12.5" fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" vector-effect="non-scaling-stroke" />
+	</svg>
+
+	Minus Sign
+	<svg viewbox="0 0 25 25">
+	  <line x1="6" y1="12.5" x2="19" y2="12.5"  fill="none" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" vector-effect="non-scaling-stroke" />
+	</svg>
+	*/
+</style>
+</head>
+<body>
+
+
+<div class="wrapper">
+
+	<h1>Accordion</h1>
+	
+	<!-- Accordion: Only One Item Open -->
+
+	<h3>Accordion: Only One Item Open</h3>
+
+	<div class="accordion acc-single-open">
+
+		<div class="acc-container">
+			<h3 class="acc-title">Super long title of accordion title</h3>
+			<div class="acc-content">
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Facere magnam perspiciatis odio iste iure ab a hic laboriosam nulla, unde officiis aperiam vero, ut aspernatur ipsam excepturi dignissimos quisquam mollitia modi. Repudiandae est architecto, quisquam assumenda amet excepturi, expedita velit?</p>
+			</div><!-- acc-content -->
+		</div><!-- acc-container -->
+
+		<div class="acc-container">
+			<h3 class="acc-title">Question Two</h3>
+			<div class="acc-content">
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Facere magnam perspiciatis odio iste iure ab a hic laboriosam nulla, unde officiis aperiam vero, ut aspernatur ipsam excepturi dignissimos quisquam mollitia modi. Repudiandae est architecto, quisquam assumenda amet excepturi, expedita velit?</p>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Facere magnam perspiciatis odio iste iure ab a hic laboriosam nulla, unde officiis aperiam vero, ut aspernatur ipsam excepturi dignissimos quisquam mollitia modi. Repudiandae est architecto, quisquam assumenda amet excepturi, expedita velit?</p>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Facere magnam perspiciatis odio iste iure ab a hic laboriosam nulla, unde officiis aperiam vero, ut aspernatur ipsam excepturi dignissimos quisquam mollitia modi. Repudiandae est architecto, quisquam assumenda amet excepturi, expedita velit?</p>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Facere magnam perspiciatis odio iste iure ab a hic laboriosam nulla, unde officiis aperiam vero, ut aspernatur ipsam excepturi dignissimos quisquam mollitia modi. Repudiandae est architecto, quisquam assumenda amet excepturi, expedita velit?</p>
+			</div><!-- acc-content -->
+		</div><!-- acc-container -->
+
+		<div class="acc-container">
+			<h3 class="acc-title">This is the third question</h3>
+			<div class="acc-content">
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Facere magnam perspiciatis odio iste iure ab a hic laboriosam nulla, unde officiis aperiam vero, ut aspernatur ipsam excepturi dignissimos quisquam mollitia modi. Repudiandae est architecto, quisquam assumenda amet excepturi, expedita velit?</p>
+			</div><!-- acc-content -->
+		</div><!-- acc-container -->
+
+	</div><!-- accordion -->
+
+
+	<!-- Accordion: Multiple Items Open -->
+
+	<h3>Accordion: Multiple Items Open</h3>
+
+	<div class="accordion acc-multiple-open">
+
+		<div class="acc-container">
+			<h3 class="acc-title">What is my favorite programming language?</h3>
+			<div class="acc-content">
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Facere magnam perspiciatis odio iste iure ab a hic laboriosam nulla, unde officiis aperiam vero, ut aspernatur ipsam excepturi dignissimos quisquam mollitia modi. Repudiandae est architecto, quisquam assumenda amet excepturi, expedita velit?</p>
+			</div><!-- acc-content -->
+		</div><!-- acc-container -->
+
+		<div class="acc-container">
+			<h3 class="acc-title">Acc Title</h3>
+			<div class="acc-content">
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Facere magnam perspiciatis odio iste iure ab a hic laboriosam nulla, unde officiis aperiam vero, ut aspernatur ipsam excepturi dignissimos quisquam mollitia modi. Repudiandae est architecto, quisquam assumenda amet excepturi, expedita velit?</p>
+			</div><!-- acc-content -->
+		</div><!-- acc-container -->
+
+		<div class="acc-container">
+			<h3 class="acc-title">Acc Title</h3>
+			<div class="acc-content">
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing, elit. Facere magnam perspiciatis odio iste iure ab a hic laboriosam nulla, unde officiis aperiam vero, ut aspernatur ipsam excepturi dignissimos quisquam mollitia modi. Repudiandae est architecto, quisquam assumenda amet excepturi, expedita velit?</p>
+			</div><!-- acc-content -->
+		</div><!-- acc-container -->
+
+	</div><!-- accordion -->
+
+
+</div><!-- wrapper -->
+
+
+<script>
+	// https://codepen.io/codeorum/pen/JjGzMRQ
+	// https://codeorum.com/tutorials/simple-accordion-collapsible-element-with-vanilla-js-and-simple-animation-effect
+
+	// Accordion
+	// initAccordion('.accordion', true);
+	// initAccordion('.accordion', false);
+	function initAccordion(elem, option){
+		document.addEventListener('click', function (e) {
+			// Daca elementul nu este .acc-title, nu fa nimic
+			if (!e.target.matches(elem+' .acc-title')) return;
+			else {
+				// Daca parintele (.acc-container) lui .acc-title are clasa .acc-active
+				if(!e.target.parentElement.classList.contains('acc-active')) {
+					// Daca option==true, sterge clasa .acc-active pentru celelalte elemente
+					if(option==true) {
+						var elementList = document.querySelectorAll(elem+' .acc-container');
+						Array.prototype.forEach.call(elementList, function (e) {
+	                        e.classList.remove('acc-active');
+						});
+					}
+					// Daca nu are clasa .acc-active, adauga clasa .acc-active
+					e.target.parentElement.classList.add('acc-active');
+				} else {
+					// Daca are clasa .acc-active, remove clasa .acc-active
+					e.target.parentElement.classList.remove('acc-active');
+				}
+			}
+		});
+	}
+
+	// Deschide doar unul, inchide celelalte
+	initAccordion('.accordion.acc-single-open', true);
+	// Deschide multiple, fara a inchide celelalte
+	initAccordion('.accordion.acc-multiple-open', false);
+
+</script>
+
+
+</body>
+</html>

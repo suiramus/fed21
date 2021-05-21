@@ -75,29 +75,35 @@
 	<div class="wrap">
 		<div class="form-container">
 			<h3 class="form-title">Trimite-ne un mesaj</h3>
-			<p class="form-info">Cu ajutorul acestui formular ne poti pune intrebari sau poti face o programare.<br>In timpul programului de lucru rapundem in 15 minute</p>
-			<form id="contact-form" action="" method="POST">
+			<p class="form-info">Cu ajutorul acestui formular ne poti pune intrebari sau poti face o programare. In timpul programului de lucru rapundem in 15 minute</p><p class="required">Campurile marcate cu "*" sunt obligatorii</p>
+			<form id="contact-form" class="contact-form" action="" method="POST">
 				<div class="input-row">
-					<input type="text" name="nume" id="nume" placeholder="Nume" required>
-					<input type="text" name="prenume" id="prenume" placeholder="Prenume" required>
+					<input type="text" name="nume" id="nume" placeholder="Nume *" required>
+					<input type="text" name="prenume" id="prenume" placeholder="Prenume *" required>
 				</div><!-- input-row -->
 				<div class="input-row">
-					<input type="email" name="email" id="email" placeholder="Email" required>
-					<input type="tel" name="tel" id="tel" placeholder="Telefon" required>
+					<input type="email" name="email" id="email" placeholder="Email *" required>
+					<input type="tel" name="tel" id="tel" placeholder="Telefon">
 				</div><!-- input-row -->
-				<textarea name="mesaj" id="mesaj" cols="60" rows="8" placeholder="Mesajul dumneavoastra" required="true"></textarea>
+				<textarea name="mesaj" id="mesaj" cols="60" rows="8" placeholder="Mesajul dumneavoastra *" required></textarea>
 				<div class="checkbox-row">
 					<input type="checkbox" value="accept" name="acceptare-conditii" id="acceptare-conditii" required>
-					<label for="acceptare-conditii">Am citit si sunt de acord cu <a href="#">Termenii si conditiile</a> de utilizare a site-ului</label>
+					<label for="acceptare-conditii">* Am citit si sunt de acord cu <a href="termeni.html">Termenii si conditiile</a> de utilizare a site-ului</label>
 				</div><!-- checkbox-row -->
 				<div class="checkbox-row">
 					<input type="checkbox" value="accept" name="newsletter" id="newsletter">
 					<label for="newsletter">Vreau sa ma abonez la newsletter</label>
 				</div><!-- checkbox-row -->
 				<input type="submit" value="Trimite mesajul" name="submit" id="contact-form-submit" onClick="formMessage();">
-				<div id="mesaj-trimis">Mesajul dumneavoastra a fost trimis cu succes. Multumim!</div>
+				<div id="mesaj-trimis">
+					<div class="mesaj-trimis-wrap">
+						<p>Mesajul dumneavoastra a fost trimis. Multumim!</p><span id="mesaj-inchide" title="Inchide">&times;</span>
+					</div>
+				</div>
 			</form>
+
 		</div><!-- form-container -->
+
 	</div><!-- wrap -->
 </div><!-- cf-section -->
 
@@ -165,6 +171,29 @@
 <a id="scroll-to-top" class="scroll" href="#topscroll" title="Deruleaza pana sus"></a>
 
 <script src="js/scripts.js"></script>
+<script>
+	// Mesaj formular
+
+	// Selecteaza formularul de contact
+	// Cand se apasa butonul de Submit, afiseaza un mesaj de multumire
+	document.querySelector("form.contact-form").addEventListener("submit", function(event) {
+		event.preventDefault();
+		this.reset(); // Clear form
+		// alert("Mesaj trimis.");
+
+		let mesaj = document.getElementById('mesaj-trimis');
+		// Arata mesajul de multumire de sub butonul de submit
+		mesaj.style.display="block";
+
+		// Sterge mesajul cand se da click pe "x"
+		document.querySelector("#mesaj-inchide").addEventListener("click", function(){
+			mesaj.style.display = "none";
+		});
+
+	});
+
+	// ===================================== //
+</script>
 
 </body>
 </html>
