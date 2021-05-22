@@ -551,11 +551,11 @@ main#main {
 	}
 
 	.card-content p {
-		margin: 10px 0 24px;
+		margin: 10px 0 10px;
 	}
 
 	.author {
-		margin-top: auto;
+		margin-top: 20px;
 		padding-top: 15px;
 		margin-bottom: 10px;
 		display: flex;
@@ -575,6 +575,18 @@ main#main {
 		margin-left: 10px;
 	}
 
+	a.read-more {
+		color:  var(--primary-color);
+	}
+
+	a.read-more:after {
+		content: " \000BB";
+	}
+
+	a.read-more:hover {
+		color: var(--secondary-color);
+		text-decoration: underline;
+	}
 
 /* SERVICII HOME PAGE */
 
@@ -975,6 +987,29 @@ img.blog-image {
 	flex-wrap: wrap;
 	margin: 50px 0 35px 0;
 }
+
+	.single-blog-content h2,
+	.single-blog-content h3,
+	.single-blog-content h4 {
+		margin-top: 30px;
+		margin-bottom: 16px;
+	}
+
+	.single-blog-content ul,
+	.single-blog-content ol {
+		padding-left: 40px;
+		line-height: 1.7;
+		margin-bottom: 30px;
+	}
+
+	.single-blog-content ul {
+		list-style: disc;
+	}
+
+	.single-blog-content ol {
+		list-style-type: decimal;
+	}
+
 
 .single-blog-content {
 	font-size: 18px;
