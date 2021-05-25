@@ -41,6 +41,47 @@
 	</div><!-- wrap -->
 </div><!-- page-header -->
 
+<div id="timer" class="timer section">
+	<div class="wrap" style="text-align: center; font-size: 18px;">
+		<p>Azi e <span id="ziua"></span>, ora: <span id="clock"></span></p>
+		<p id="mesaj"></p>
+	</div><!-- wrap -->
+</div><!-- timer -->
+
+<script>
+	var myTimer = setInterval(myClock, 1000);
+
+	function myClock() {
+		var d = new Date();
+		// d.setHours(17);
+		// d.setDay(1);
+		var day = d.getDay();
+		var hour = d.getHours();
+
+		switch (day) {
+			case 1: day = "Luni"; break;
+			case 2: day = "Marti"; break;
+			case 3: day = "Miercuri"; break;
+			case 4: day = "Joi"; break;
+			case 5: day = "Vineri"; break;
+			case 6: day = "Sambata"; break;
+			case 7: day = "Duminica"; break;
+		}
+
+		document.getElementById("ziua").innerHTML = day;
+		document.getElementById("clock").innerHTML = d.toLocaleTimeString();
+
+
+		var mesajDeAfisat = document.getElementById("mesaj");
+		if(hour < 9 || hour >= 17){
+			mesajDeAfisat.innerHTML = "Biroul este inchis. Deschidem dimineata, la ora 9";
+		} else {
+			mesajDeAfisat.innerHTML = "Biroul este deschis. Ne poti suna acum!";
+		}
+	} // myClock();
+
+</script>
+
 <main id="main">
 
 <div class="section contact-info background-one">

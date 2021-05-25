@@ -1766,15 +1766,22 @@ p.form-info {
 
 .filter-wrap {
 	text-align: center;
-	margin: 0 0 60px 0;
+	margin: 0 0 80px 0;
 }
+
+	.filter-wrap span {
+		display: block;
+		margin-bottom: 20px;
+		/*color: #936744;*/
+		color: #724e32;
+	}
 
 	.filter-wrap .btn-filter {
 		border: none;
 		padding: 10px 15px;
-		margin: 2px;
+		margin: 5px 2px;
 		background: #F4EDDC;
-		color: #936744;
+		color: #724e32;
 		border-radius: 4px;
 		font-size: 15px;
 		line-height: 1;
