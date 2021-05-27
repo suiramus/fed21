@@ -1428,7 +1428,7 @@ input[type="checkbox"] ~ label:hover {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		margin-top: 60px;
+		margin-top: 40px;
 	}
 
 	.sw-controls .swiper-button-prev,
@@ -1977,9 +1977,7 @@ footer#footer {
 
 
 .copyright {
-	/*background: #021f49;*/
 	background: #0e141d;
-	/*border-top: 1px solid rgba(250,250,250,.1);*/
 	color: #DFDFDF;
 	padding: 15px 0 10px;
 }
@@ -1993,18 +1991,15 @@ footer#footer {
 	flex-wrap: wrap;
 }
 
-@media screen and (max-width:  680px) {
-
-	.copy-row {
-		flex-direction: column;
-		justify-content: center;
-	}
-
-} /*  680px media end */
-
 p.rights {
-	font-size: 80%;
+	font-size: 90%;
 	opacity: .6;
+	line-height: 1.6;
+}
+
+.rights a:hover {
+	color: var(--primary-color);
+	opacity: 1;
 }
 
 .footer-icons {
@@ -2023,6 +2018,24 @@ p.rights {
 .footer-icons a:hover {
 	opacity: 1;
 }
+
+@media screen and (max-width:  680px) {
+
+	.copyright {
+		padding: 25px 0 10px;
+	}
+
+	.copy-row {
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	p.rights {
+		text-align: center;
+	}
+
+} /*  680px media end */
+
 
 /* Scroll to top button */
 
@@ -2085,6 +2098,59 @@ a#scroll-to-top:hover {
 	list-style: disc;
 }
 
+/* SITEMAP */
+
+.page-header-sitemap {
+	background: var(--secondary-color);
+}
+
+.sitemap {
+	display: flex;
+	justify-content: center;
+	margin-left: -20px;
+	margin-right: -20px;
+}
+
+.sitemap-box {
+	width: calc(33.33% - 40px);
+	margin: 20px;
+	border: 1px solid rgba(0, 20, 90, .07);
+	background: rgba(0, 20, 90, .03);
+	padding: 40px 30px;
+	border-radius: 4px;
+}
+
+.sitemap-box a:hover {
+	color: var(--primary-color);
+}
+
+.sitemap-box h3 {
+	font-size: 22px;
+	margin-bottom: 20px;
+}
+
+	.sitemap-list {
+		line-height: 2;
+		font-size: 18px;
+		padding-left: 20px;
+		list-style: disc;
+	}
+
+@media screen and (max-width: 1024px) {
+	.sitemap {
+		flex-wrap: wrap;
+	}
+
+	.sitemap-box {
+		width: calc(50% - 40px);
+	}
+} /* 1024px media end */
+
+@media screen and (max-width: 800px) {
+	.sitemap-box {
+		width: calc(100% - 40px);
+	}
+} /* 800px media end */
 
 /* 	Fancybox styles
 	https://fancyapps.com/fancybox/3/

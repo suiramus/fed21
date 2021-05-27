@@ -150,7 +150,9 @@
 <div class="copyright">
 	<div class="wrap">
 		<div class="copy-row">
-			<p class="rights">Copyright &copy; 2021 <a href="index.html" title="Dream Construct">Dream Construct</a>. Toate drepturile rezervate.</p>
+			<p class="rights">Copyright &copy; 2021 <a href="index.html" title="Dream Construct">Dream Construct</a>. Toate drepturile rezervate.<br>
+				<a href="termeni.html" title="Termeni si conditii de utilizare a site-ului">Termeni si conditii</a> | <a href="sitemap.html" title="Sitemap">Sitemap</a>
+			</p><!-- rights -->
 			<div class="footer-icons">
 				<a href="https://www.facebook.com" target="_blank"><img src="./images/icons/facebook-white-48.png" alt="Facebook"></a>
 				<a href="https://www.instagram.com" target="_blank"><img src="./images/icons/instagram-white-48.png" alt="Instagram"></a>
@@ -165,29 +167,6 @@
 <a id="scroll-to-top" class="scroll" href="#topscroll" title="Deruleaza pana sus"></a>
 
 <script src="js/scripts.js"></script>
-<script>
-	// Mesaj formular
-
-	// Selecteaza formularul de contact
-	// Cand se apasa butonul de Submit, afiseaza un mesaj de multumire
-	document.querySelector("form.contact-form").addEventListener("submit", function(event) {
-		event.preventDefault();
-		this.reset(); // Clear form
-		// alert("Mesaj trimis.");
-
-		let mesaj = document.getElementById('mesaj-trimis');
-		// Arata mesajul de multumire de sub butonul de submit
-		mesaj.style.display="block";
-
-		// Sterge mesajul cand se da click pe "x"
-		document.querySelector("#mesaj-inchide").addEventListener("click", function(){
-			mesaj.style.display = "none";
-		});
-
-	});
-
-	// ===================================== //
-</script>
 
 </body>
 </html>
