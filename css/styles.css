@@ -1537,7 +1537,7 @@ img.icon-svg {
 /* Contact form */
 
 .form-container {
-	max-width: 800px;
+	max-width: 920px;
 	margin: 0 auto;
 	padding: 30px;
 	background: rgba(140, 190, 250, 0.2);
@@ -1914,7 +1914,7 @@ footer#footer {
 .footer-widgets {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-between;
 	margin-left: -20px;
 	margin-right: -20px;
 }
@@ -1954,11 +1954,13 @@ footer#footer {
 	}
 
 	.footer-widget ul li a {
-		line-height: 2;
+		line-height: 2.2;
+		font-size: 18px;
 	}
 
 	.footer-widget p {
-		margin-bottom: 20px;
+		margin-bottom: 10px;
+		line-height: 1.8;
 	}
 
 	.footer-widget-about p {
@@ -2045,6 +2047,43 @@ a#scroll-to-top:hover {
 	opacity: 1;
 }
 
+
+/* TERMENI SI CONDITII  */
+
+.page-header-termeni {
+	background: linear-gradient(rgba(30, 40, 80,.3), rgba(30, 40, 80,.5)), url('../images/backgrounds/termeni.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.termeni-conditii h2 {
+	margin-bottom: 70px;
+	text-align: center;
+}
+
+.termeni-conditii h3 {
+	text-transform: none;
+	font-size: 22px;
+	margin: 40px 0 14px;
+}
+
+.termeni-conditii p {
+	margin: 0 0 16px;
+	font-size: 18px;
+	line-height: 1.6;
+}
+
+.termeni-conditii ul {
+	font-size: 18px;
+	line-height: 1.6;
+	margin-bottom: 20px;
+	padding-left: 40px;
+}
+
+.termeni-conditii ul li {
+	list-style: disc;
+}
 
 
 /* 	Fancybox styles
