@@ -302,12 +302,18 @@ header#header {
 
 } /*  999px media end */
 
+@media screen and (max-width: 480px) {
+	#logo a {
+		font-size: 1.4rem;
+	}
+} /* 480px media end */
+
 
 /* HERO SECTION */
 
 .hero-section {
 	/*background: linear-gradient(rgba(255, 95, 20,.7), rgba(0,20,90,.7)), url('../images/house.jpg');*/
-	background: linear-gradient(rgba(0, 0, 0,.05), rgba(0,0,0,.3)), url('../images/house.jpg');
+	background: linear-gradient(rgba(0, 0, 0,.08), rgba(0,0,0,.8)), url('../images/house.jpg');
 	background-size: cover;
 	background-position: center;
 }
@@ -332,7 +338,7 @@ header#header {
 	}
 
 	.hero-description {
-		font-size: 1.8rem;
+		font-size: 1.5rem;
 		line-height: 1.3;
 		text-transform: uppercase;
 		/*letter-spacing: 1px;*/
@@ -462,8 +468,8 @@ main#main {
 @media screen and (max-width: 1024px) {
 
 	.cards {
-		margin-left: 0;
-		margin-right: 0;
+		/*margin-left: 0;
+		margin-right: 0;*/
 		justify-content: center;
 	}
 
@@ -480,8 +486,8 @@ main#main {
 @media screen and (max-width: 680px) {
 
 	.card {
-		flex-basis: calc(100% / 1 - 80px);
-		width: 400px;
+		flex-basis: calc(100% / 1 - 30px);
+		/*width: 400px;*/
 	}
 
 } /* 680px media end */
@@ -1347,6 +1353,13 @@ input[type="checkbox"] ~ label:hover {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 }
+
+@media screen and (max-width: 680px) {
+	.page-header-title {
+		font-size: 2rem;
+		line-height: 1.2;
+	}
+} /* 680px media end */
 
 .page-header-container .breadcrumb  {
 	color: #FFF;
