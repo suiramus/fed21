@@ -751,8 +751,7 @@ a.hover-link:after {
 	transition: all .3s ease-in-out;
 }
 
-@media screen and (max-width:  540px;) {
-
+@media screen and (max-width:  540px) {
 	.team-card {
 		max-width: 260px;
 	}
