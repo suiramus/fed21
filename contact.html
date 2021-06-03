@@ -100,7 +100,7 @@
 					<div class="mesaj-trimis-wrap">
 						<p>Mesajul dumneavoastră a fost trimis. Mulțumim!</p><span id="mesaj-inchide" title="Inchide">&times;</span>
 					</div>
-				</div>
+				</div><!-- mesaj-trimis -->
 			</form>
 
 		</div><!-- form-container -->
@@ -193,9 +193,12 @@
 			mesaj.style.display = "none";
 		});
 
-	});
+		// Sterge mesajul dupa 10 secunde
+		setTimeout(function(){
+			mesaj.style.display = "none";
+		}, 10000);
 
-	// ===================================== //
+	});
 </script>
 
 </body>

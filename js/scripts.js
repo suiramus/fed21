@@ -79,3 +79,34 @@ function scrollFunction() {
 } // Scroll to top END
 
 // ===================================== //
+
+
+
+// Mesaj comentariu in single-blog pages
+
+// Verifica daca form.comment-form !==null (daca este prezent in pagina)
+if (document.querySelector('form.comment-form') !== null) {
+
+	// Selecteaza formularul de comentariu
+	// Cand se apasa butonul de Submit, afiseaza un mesaj de multumire
+	document.querySelector("form.comment-form").addEventListener("submit", function(event) {
+		event.preventDefault();
+		this.reset(); // Clear form
+		// alert("Mesaj trimis.");
+
+		let mesaj = document.getElementById('mesaj-trimis');
+		// Arata mesajul de multumire de sub butonul de submit
+		mesaj.style.display="block";
+
+		// Sterge mesajul cand se da click pe "x"
+		document.querySelector("#mesaj-inchide").addEventListener("click", function(){
+			mesaj.style.display = "none";
+		});
+
+		// Sterge mesajul dupa 10 secunde
+		setTimeout(function(){
+			mesaj.style.display = "none";
+		}, 10000);
+	});
+
+} // if not null
